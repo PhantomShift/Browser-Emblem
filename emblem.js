@@ -102,10 +102,10 @@ const Enums = {
   GameState: {Select: "Select", Move: "Move", Action: "Action", Menu: "Menu", Waiting: "Waiting", Trading: "Trading"},
   MovementType: {Ground: "Ground", Flying: "Flying"},
   Tile: {
-    Wall: {Name: "Wall", Traversible: false, Cover: 0, DEF: 0, Color: "Black", Image: "wall.png"},
-    Grass: {Name: "Grass", Traversible: true, Cover: 0, DEF: 0, Color: "White", Image: "grass.png"},
-    Forest: {Name: "Forest", Traversible: true, Cover: 30, DEF: 0, Color: "Green", Image: "forest.png"},
-    Fort: {Name: "Fort", Traversible: true, Cover: 30, DEF: 1, Color: "Gray", Image: "fort.png"}
+    Wall: {Name: "Wall", Traversible: false, Cover: 0, DEF: 0, Color: "Black", Image: "assets/wall.png"},
+    Grass: {Name: "Grass", Traversible: true, Cover: 0, DEF: 0, Color: "White", Image: "assets/grass.png"},
+    Forest: {Name: "Forest", Traversible: true, Cover: 30, DEF: 0, Color: "Green", Image: "assets/forest.png"},
+    Fort: {Name: "Fort", Traversible: true, Cover: 30, DEF: 1, Color: "Gray", Image: "assets/fort.png"}
   },
   WeaponType: {Sword: "Sword", Lance: "Lance", Axe: "Axe", Anima: "Anima", Dark: "Dark", Light: "Light", Bow: "Bow", Rod: "Rod"},
   AttackType: {Physical: "Physical", Magical: "Magical"},
@@ -160,7 +160,7 @@ class Unit {
     this.Behavior = params.Behavior || Enums.Behavior.Waiting;
     this.Inventory = params.Inventory || [];
     this.Image = document.createElement("img");
-    this.Image.src = params.Image || "placeholder.png"
+    this.Image.src = params.Image || "assets/placeholder.png"
     this.Image.alt = this.Name
     this.Image.className = "unit image"
     // fully optional parameters
@@ -510,13 +510,13 @@ class Enemy extends Unit {
     }
 }
 let EnemyLibrary = {
-    Cavalier: new Enemy({Name: "Cavalier", Image: "red/cavalier.png", MAXHP: 20, POW: 5, SKL: 2, SPD: 5, LUK: 0, DEF: 6, RES: 0, MOV: 7, Equipped: CloneDictionary(ItemLibrary.IronLance), Growth: {HP: 75, POW: 35, SKL: 40, SPD: 28, LUK: 30, DEF: 15, RES: 15}, Class: Enums.Class.Cavalier}),
-    Archer: new Enemy({Name: "Archer", Image: "red/archer.png", MAXHP: 18, POW: 4, SKL: 3, SPD: 3, LUK: 0, DEF: 3, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronBow), Growth: {HP: 70, POW: 35, SKL: 40, SPD: 32, LUK: 35, DEF: 15, RES: 20}}),
-    Brigand: new Enemy({Name: "Brigand", Image: "red/brigand.png", MAXHP: 20, POW: 5, SKL: 1, SPD: 5, LUK: 0, DEF: 3, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronAxe), Growth: {HP: 82, POW: 50, SKL: 30, SPD: 20, LUK: 15, DEF: 10, RES: 13}}),
-    Knight: new Enemy({Name: "Knight", Image: "red/knight.png", MAXHP: 17, POW: 5, SKL: 2, SPD: 0, LUK: 0, DEF: 9, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronLance), Growth: {HP: 80, POW: 40, SKL: 30, SPD: 15, LUK: 25, DEF: 32, RES: 20}}),
-    Mercenary: new Enemy({Name: "Mercenary", Image: "red/mercenary.png", MAXHP: 18, POW: 4, SKL: 8, SPD: 8, LUK: 0, DEF: 4, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronSword), Growth: {HP: 80, POW: 40, SKL: 40, SPD: 32, LUK: 30, DEF: 18, RES: 20}}),
-    Shaman: new Enemy({Name: "Shaman", Image: "red/shaman.png", MAXHP: 16, POW: 3, SKL: 1, SPD: 2, LUK: 0, DEF: 2, RES: 4, MOV: 5, Equipped: CloneDictionary(ItemLibrary.Flux), Growth: {HP: 50, POW: 50, SKL: 32, SPD: 30, LUK: 20, DEF: 12, RES: 30}}),
-    Soldier: new Enemy({Name: "Soldier", Image: "red/soldier.png", MAXHP: 19, POW: 4, SKL: 2, SPD: 2, LUK: 1, DEF: 1, RES: 1, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronLance), Growth: {HP: 80, POW: 50, SKL: 40, SPD: 20, LUK: 25, DEF: 12, RES: 15}}),
+    Cavalier: new Enemy({Name: "Cavalier", Image: "assets/red/cavalier.png", MAXHP: 20, POW: 5, SKL: 2, SPD: 5, LUK: 0, DEF: 6, RES: 0, MOV: 7, Equipped: CloneDictionary(ItemLibrary.IronLance), Growth: {HP: 75, POW: 35, SKL: 40, SPD: 28, LUK: 30, DEF: 15, RES: 15}, Class: Enums.Class.Cavalier}),
+    Archer: new Enemy({Name: "Archer", Image: "assets/red/archer.png", MAXHP: 18, POW: 4, SKL: 3, SPD: 3, LUK: 0, DEF: 3, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronBow), Growth: {HP: 70, POW: 35, SKL: 40, SPD: 32, LUK: 35, DEF: 15, RES: 20}}),
+    Brigand: new Enemy({Name: "Brigand", Image: "assets/red/brigand.png", MAXHP: 20, POW: 5, SKL: 1, SPD: 5, LUK: 0, DEF: 3, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronAxe), Growth: {HP: 82, POW: 50, SKL: 30, SPD: 20, LUK: 15, DEF: 10, RES: 13}}),
+    Knight: new Enemy({Name: "Knight", Image: "assets/red/knight.png", MAXHP: 17, POW: 5, SKL: 2, SPD: 0, LUK: 0, DEF: 9, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronLance), Growth: {HP: 80, POW: 40, SKL: 30, SPD: 15, LUK: 25, DEF: 32, RES: 20}}),
+    Mercenary: new Enemy({Name: "Mercenary", Image: "assets/red/mercenary.png", MAXHP: 18, POW: 4, SKL: 8, SPD: 8, LUK: 0, DEF: 4, RES: 0, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronSword), Growth: {HP: 80, POW: 40, SKL: 40, SPD: 32, LUK: 30, DEF: 18, RES: 20}}),
+    Shaman: new Enemy({Name: "Shaman", Image: "assets/red/shaman.png", MAXHP: 16, POW: 3, SKL: 1, SPD: 2, LUK: 0, DEF: 2, RES: 4, MOV: 5, Equipped: CloneDictionary(ItemLibrary.Flux), Growth: {HP: 50, POW: 50, SKL: 32, SPD: 30, LUK: 20, DEF: 12, RES: 30}}),
+    Soldier: new Enemy({Name: "Soldier", Image: "assets/red/soldier.png", MAXHP: 19, POW: 4, SKL: 2, SPD: 2, LUK: 1, DEF: 1, RES: 1, MOV: 5, Equipped: CloneDictionary(ItemLibrary.IronLance), Growth: {HP: 80, POW: 50, SKL: 40, SPD: 20, LUK: 25, DEF: 12, RES: 15}}),
 }
 
 let GAMESTATE;
@@ -1047,11 +1047,11 @@ let TestCharacterMap =
 0000000C0B0
 00000000000`
 
-let testUnit = new Unit({Name: "Caine", Affiliation: Enums.Affiliation.Player, Equipped: CloneDictionary(ItemLibrary.IronSword), Image: "blue/lord.png", Class: Enums.Class.Lord, Inventory: [CloneDictionary(ItemLibrary.Vulnerary), null, null, null]})
+let testUnit = new Unit({Name: "Caine", Affiliation: Enums.Affiliation.Player, Equipped: CloneDictionary(ItemLibrary.IronSword), Image: "assets/blue/lord.png", Class: Enums.Class.Lord, Inventory: [CloneDictionary(ItemLibrary.Vulnerary), null, null, null]})
 let testEnemy = CloneDictionary(EnemyLibrary.Brigand)
 let testEnemy2 = CloneDictionary(EnemyLibrary.Brigand)
-let testCleric = new Unit({Name: "Sara", Affiliation: Enums.Affiliation.Player, Equipped: CloneDictionary(ItemLibrary.Heal), Image: "blue/cleric.png", Class: Enums.Class.Cleric})
-let SerLanser = new Unit({Name: "Ser Lanser", Affiliation: Enums.Affiliation.Player, MOV: 6, Image: "blue/cavalier.png", Equipped: CloneDictionary(ItemLibrary.IronSword), Inventory: [CloneDictionary(ItemLibrary.Javelin), null, null, null], Class: Enums.Class.Cavalier})
+let testCleric = new Unit({Name: "Sara", Affiliation: Enums.Affiliation.Player, Equipped: CloneDictionary(ItemLibrary.Heal), Image: "assets/blue/cleric.png", Class: Enums.Class.Cleric})
+let SerLanser = new Unit({Name: "Ser Lanser", Affiliation: Enums.Affiliation.Player, MOV: 6, Image: "assets/blue/cavalier.png", Equipped: CloneDictionary(ItemLibrary.IronSword), Inventory: [CloneDictionary(ItemLibrary.Javelin), null, null, null], Class: Enums.Class.Cavalier})
 
 // Everything is aligned to the left to make editing information easier
 function test() {
@@ -1101,7 +1101,7 @@ let Kurip = new Unit({
     Name: "Kurip", Affiliation: Enums.Affiliation.Player, MAXHP: 16, POW: 3, SKL: 3, SPD: 4, LUK: 3, DEF: 2, RES: 3, MOV: 5,
     Growth: {HP: 55, POW: 45, SKL: 40, SPD: 45, LUK: 20, DEF: 5, RES: 30},
     Equipped: CloneDictionary(ItemLibrary.Fire), Inventory: [CloneDictionary(ItemLibrary.Vulnerary), CloneDictionary(ItemLibrary.Thunder), null, null],
-    Class: Enums.Class.Mage, Image: "blue/mage.png"
+    Class: Enums.Class.Mage, Image: "assets/blue/mage.png"
 });
 do {Kurip.LevelUp()} while (Kurip.LVL < 4);
 for (let key in enemies2) {
