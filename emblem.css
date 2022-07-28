@@ -1,0 +1,105 @@
+body {
+    padding: 0;
+    background-color: lightblue;
+}
+h1 {
+    text-align: center;
+}
+h3 {
+    text-decoration: underline;
+}
+
+footer > p {
+    text-align: center;
+}
+
+iframe {
+    border: 0;
+}
+
+.image {
+    float: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.unit {z-index: 2;}
+
+.highlight {
+    z-index:  1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 50%;
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+    max-height: 500px;
+}
+
+.small {
+    border: 0px;
+    width: 100%;
+    height: 50%;
+    max-height: 250px;
+    background-color: darkgray;
+}
+#log {
+    background-color: white;
+    overflow-y: scroll;
+}
+#hover, #log {
+    white-space: pre-line; /**https://stackoverflow.com/questions/11423300/new-lines-in-text-within-a-div**/
+}
+#dialogueBox {
+    visibility: hidden;
+    background-color: darkgray;
+    position: relative;
+    top: -100px;
+    margin-left: 20%;
+    display: block;
+    width: 60%;
+    height: 100px;
+    z-index: 4;
+}
+#startButton {
+    font-size: 20px;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 50px;
+    margin: -25px 0 0 -50px;
+}
+
+.sidecolumn {
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    background-color: Gray;
+    width: 20%;
+    height: 500px;
+    max-height: 500px;
+}
+
+.middlecolumn {
+    float: left;
+    display: inline-block;
+    width: 60%;
+    height: 500px;
+    max-height: 500px;
+    background-color: lightgreen;
+    overflow: auto;
+    position: relative;
+}
+
+.button {
+    text-align: center;
+    display: inline-block;
+    background-color: #424242;
+    width: 100%;
+    height: 50px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Browser Emblem - About</title>
+        <link rel="stylesheet" href="emblem.css">
+    </head>
+    <body>
+        <h1>About Browser Emblem</h1>
+        <h3>About Fire Emblem</h3>
+        <p>The game that this project is based on, Fire Emblem, is a strategy
+         role-playing game where you, the tactician, take control of a small army
+         to clear objectives. The actual game is far more in depth than this little
+         project would lead you to believe, with not only differing scale, as
+         there is usually at least 20 main story maps, but in how many features are
+         present, including animated combat, full cutscenes and dialog, and more recently,
+         plenty of optional maps.
+        </p>
+        <h3>The HTML and CSS</h3>
+        <p>The HTML of this project is pretty bare-bones, as the focus of my
+         project in particular was focused on the functionality rather than the
+         appearance. The CSS is similarly pretty basic, with no functionality outside
+         of making sure the page is formatted the way I want it to.</p>
+        <h3>The JavaScript</h3>
+        <p>The main focus of my project, the JavaScript, was pretty involved.</p>
+        <p>However, before having touched any HTML, CSS, or JavaScript, I went to
+         work on creating a prototype in Lua, or more specifically, through the
+         platform Roblox. The reason I chose to work on a prototype instead of
+         working in JavaScript was because Lua is the language I'm most familiar
+         with (the only one I knew before taking this class, in fact). I used Roblox
+         since I'm familiar with developing on it and has easy to edit graphical user interfaces.
+         The main goal of the prototype was to get something functioning that resembled
+         Fire Emblem's gameplay.</p>
+        <p>The way the gameplay works is that I had four maps with their own specified functionality.
+         The Meta map contains any characteristics of the specific tile, such as how
+         much defense it offers and the name of the tile. The Character map contains information about where characters are located.
+         The Node map is an array of nodes which is used for pathfinding via the A* algorithm, which I learned about thanks to YouTube channel Javidx9.
+         Lastly, the Render map contains each tile which shows up on screen, which can be interacted with with events like on-click and on-hover.
+         Whenever the user interacts with the game, each map can easily be referenced and updated. The gameplay itself, such as the combat, is fairly
+         simple and just involves units interacting with each other. Once the user has moved all of their units or chooses to end the turn, interaction
+         is temporarily taken away so that the enemies can interact with the player units.</p>
+        <p>The main issues I faced when working on the project was dealing with the differences between JavaScript and Lua.
+         Aside from the differing syntax, Lua and JavaScript fundamentally work rather differently. To my understanding, JavaScript, as much as it can,
+         tries to work through all of its code asynchronously, whereas Lua works through its threads completely synchronously.
+         For example, when iterating through an array, or a table in Lua, JavaScript pretty much executes the code associated with each iteration
+         pretty much instantaneously, whereas in Lua every single iteration is worked through one at a time.
+         This in particular was a problem when trying to sequence the enemy turn, as instead of going through each enemy one at a time,
+         all of their actions would occur at once, which both messed with how they positioned themselves and looked unnatural.
+         To overcome this, setTimeout() was used extensively to simulate a delay between actions.</p>
+        <p>Aside from the asynchronous nature of JavaScript, however, working with it went pretty smoothly.
+         The syntax isn't overly different compared to Lua, so the bulk of the code didn't have to be changed massively.
+         Additionally, the way classes work in JavaScript, although not necessarily as flexible, was easier to work with for what I wanted despite being similar.</p>
+        <h3>Highlights</h3>
+        <p>If I had to name the specific highlights of the project, it would be...</p>
+        <ul>
+            <li>Easy to develop - creating new maps is fairly simple, as all each map requires are two string representations of the map and information about each unit</li>
+            <li>Extensive use of classes - an object oriented approach was used for items and units, as inheritence in particular is pretty useful</li>
+            <li>Use of tiles and sprites - they look really nice</li>
+        </ul>
+        <h3>Resources</h3>
+        <h4>Tutorial on A*</h4>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/icZj67PTFhc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4>Putting new lines inside of divs</h4>
+        <a href="https://stackoverflow.com/questions/11423300/new-lines-in-text-within-a-div">https://stackoverflow.com/questions/11423300/new-lines-in-text-within-a-div</a>
+        <footer>
+            <p><a href="index.html">Home</a> - <a href="emblem.html">Game</a> - <a href="about.html">About</a></p>
+        </footer>
+    </body>
+</html>
